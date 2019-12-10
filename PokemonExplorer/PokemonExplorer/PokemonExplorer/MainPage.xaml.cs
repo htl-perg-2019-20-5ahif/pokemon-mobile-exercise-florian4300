@@ -3,7 +3,10 @@ using PokemonExplorer.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Globalization;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -53,7 +56,6 @@ namespace PokemonExplorer
             {
                 response = client.GetAsync(p.Url).Result;
                 var resultDetail = JsonConvert.DeserializeObject<PokemonDetails>(response.Content.ReadAsStringAsync().Result);
-
                 this.pokemonsDetails.Add(resultDetail);
 
 
@@ -66,7 +68,7 @@ namespace PokemonExplorer
 
 
             var details = e.Item as PokemonDetails;
-            await Navigation.PushModalAsync(new DetailPage(details.Name,details.Weight,details.Abilities.ToList(),details.Sprites.front_default,details.Sprites.back_default));
+            await Navigation.PushModalAsync(new DetailPage(details.Name,details.Weight,details.Abilities.ToList(),details.Sprites.Front_default,details.Sprites.Back_default));
 
         }
     }

@@ -17,7 +17,7 @@
 						<ViewCell>
 							<Grid>
 								<Label Text="{Binding Path=Name}" FontAttributes="Bold" />
-								<Image  Grid.Column="1" />
+								<Image Source="{Binding Sprites.Front_default}"  Grid.Column="1" />
 							</Grid>
 						</ViewCell>
 					</DataTemplate>

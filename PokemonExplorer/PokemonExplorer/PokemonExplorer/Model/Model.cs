@@ -23,9 +23,9 @@ namespace PokemonExplorer.Model
     }
     public class Sprite
     {
-        public Uri front_default { get; set; }
+        public Uri Front_default { get; set; }
 
-        public Uri back_default { get; set; }
+        public Uri Back_default { get; set; }
     }
 
     public class AbilitySlot
